@@ -6,32 +6,34 @@
   background-color: hsl(160, 100%, 50%);
 }
 .itemCard > img {
-  width: 100%;
-  height: 150px;
+  min-width: 100%;
+  min-height: 150px;
   background-position: center center;
   background-repeat: no-repeat;
   border-radius: 15px 15px 0px 0px;
 }
 .itemCard {
   text-align: center;
-  width: 450px;
-  height: 400px;
+  min-width: 250px;
+  min-height: 300px;
   background-color: antiquewhite;
   border-radius: 25px;
-  padding-bottom: 10px;
   margin: 10px;
   overflow: scroll;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .itemCard::-webkit-scrollbar {
   display: none;
 }
 
 .buttonGrpoup {
-  max-width: 300px;
+  position: absolute;
+  min-width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-evenly;
+  bottom: 10px;
 }
