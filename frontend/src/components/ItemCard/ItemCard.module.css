@@ -1,0 +1,69 @@
+.itemCard > img {
+  min-width: 100px;
+  min-height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 15px 15px 15px 15px;
+  margin-bottom: 25px;
+}
+.itemCard {
+  box-shadow: 4px 4px 10px rgb(80, 77, 77);
+  text-align: center;
+  min-width: 300px;
+  min-height: 300px;
+  background-color: white;
+  border-radius: 25px;
+  margin: 10px;
+  overflow: scroll;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: linear 0.1s;
+  border-color: black;
+}
+.itemCard::-webkit-scrollbar {
+  display: none;
+}
+/* On hover effect */
+.itemCard:hover {
+  /* transform: translateX(-5px);
+  box-shadow: 5px 5px var(--green-color), 6px 6px var(--green-color),
+    7px 7px var(--green-color), 8px 8px var(--green-color),
+    9px 9px var(--green-color); */
+  border-color: black;
+  transform: scale(1.04);
+}
+
+.buttonGrpoup {
+  position: absolute;
+  min-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+  bottom: 15px;
+}
+.addButton {
+  background-color: var(--green-color);
+  color: white;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: black;
+  min-width: 25px;
+  margin: 5px 5px 5px 5px;
+}
+.cartButton {
+  background-color: var(--green-color);
+  color: white;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: black;
+  min-width: 120px;
+  margin: 5px 5px 5px 5px;
+}
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px 2px 2px 2px;
+}

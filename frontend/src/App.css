@@ -1,3 +1,9 @@
 .App {
   text-align: center;
+  background: var(--background-color);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+:root {
+  --background-color: radial-gradient(rgb(114, 95, 202), rgb(76, 59, 158));
+  --green-color: rgb(19, 181, 36);
 }
