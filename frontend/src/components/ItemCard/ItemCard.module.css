@@ -30,7 +30,7 @@
   box-shadow: 5px 5px var(--green-color), 6px 6px var(--green-color),
     7px 7px var(--green-color), 8px 8px var(--green-color),
     9px 9px var(--green-color); */
-  border-color: black;
+
   transform: scale(1.04);
 }
 
@@ -43,24 +43,32 @@
   align-content: space-evenly;
   bottom: 15px;
 }
+
 .addButton {
   background-color: var(--green-color);
   color: white;
   border-radius: 5px;
-  border: 2px solid;
+  border: 1px solid;
   border-color: black;
   min-width: 25px;
   margin: 5px 5px 5px 5px;
+}
+.addButton:hover {
+  transform: scale(1.2);
 }
 .cartButton {
   background-color: var(--green-color);
   color: white;
   border-radius: 5px;
-  border: 2px solid;
+  border: 1px solid;
   border-color: black;
   min-width: 120px;
   margin: 5px 5px 5px 5px;
 }
+.cartButton:hover {
+  transform: scale(1.1);
+}
+
 .count {
   display: flex;
   align-items: center;

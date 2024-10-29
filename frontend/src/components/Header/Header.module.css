@@ -1,5 +1,10 @@
 .header {
   display: flex;
-  height: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
   width: 100%;
+}
+.cart {
+  color: white;
 }

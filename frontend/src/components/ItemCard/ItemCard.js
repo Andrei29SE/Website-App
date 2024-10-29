@@ -5,12 +5,13 @@ function ItemCard(props) {
   const { title, price, photo } = props
   // increas/decrease amount of goods
   const [count, setCount] = useState(1)
-  const handleOndecInrease = () => {
+  const handleOndInrease = () => {
     return setCount(count + 1)
   }
   const handleOndecDecrease = () => {
     return setCount(count - 1)
   }
+  // add to cart functionality
 
   return (
     <div className={styles.itemCard}>
@@ -18,7 +19,7 @@ function ItemCard(props) {
       <img className='' alt='SMTH' src={photo} />
       <h4>Price: {price}</h4>
       <div className={styles.buttonGrpoup}>
-        <button onClick={handleOndecInrease} className={styles.addButton}>
+        <button onClick={handleOndInrease} className={styles.addButton}>
           +
         </button>
         <div className={styles.count}>{count}</div>
