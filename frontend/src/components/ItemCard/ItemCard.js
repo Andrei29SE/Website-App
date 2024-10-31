@@ -1,5 +1,6 @@
 import styles from "./ItemCard.module.css"
 import { useState } from "react"
+import ModalWindow from "../ModaWindow/ModalWindow"
 
 function ItemCard(props) {
   const { title, price, photo } = props
@@ -11,7 +12,6 @@ function ItemCard(props) {
   const handleOndecDecrease = () => {
     return setCount(count - 1)
   }
-  // add to cart functionality
 
   return (
     <div className={styles.itemCard}>
@@ -31,6 +31,7 @@ function ItemCard(props) {
           -
         </button>
         <button className={styles.cartButton}>Add to cart</button>
+        <ModalWindow />
       </div>
     </div>
   )

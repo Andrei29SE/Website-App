@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  itemAmount: 1,
+  itemAmount: {},
 }
 
 const cardSlice = createSlice({
@@ -14,7 +14,7 @@ const cardSlice = createSlice({
   },
 })
 
-// Redusers
+// Reducers
 export const { addToCart } = cardSlice.actions
 // Subscription(selectors)
 export const selectItems = (state) => state.itemAmount.itemAmount
