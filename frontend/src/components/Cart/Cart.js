@@ -19,7 +19,7 @@ function Cart() {
   return (
     <IconButton aria-label='cart'>
       <StyledBadge badgeContent={1} color='secondary'>
-        <ShoppingCartIcon sx={{ color: "white" }} />
+        <ShoppingCartIcon sx={{ color: "black" }} />
       </StyledBadge>
     </IconButton>
   )

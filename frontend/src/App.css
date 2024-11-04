@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  background: var(--background-color);
+  background: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   align-items: center;
 }
@@ -16,4 +16,7 @@ input {
   border: 1px solid;
   border-color: black;
   width: 250px;
+}
+p {
+  margin-bottom: 5px;
 }

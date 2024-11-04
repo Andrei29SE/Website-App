@@ -3,23 +3,23 @@ import { useState } from "react"
 import ModalWindow from "../ModaWindow/ModalWindow"
 
 function ItemCard(props) {
-  const { title, price, photo } = props
+  const { title, price, images } = props
   // increas/decrease amount of goods
   const [count, setCount] = useState(1)
   const handleOndInrease = () => {
     return setCount(count + 1)
   }
   const handleOndecDecrease = () => {
-    if (count === 1) {
+    if (!!count) {
       return setCount(count - 1)
     }
   }
 
   return (
     <div className={styles.itemCard}>
-      <h3>{title}</h3>
-      <img className='' alt='SMTH' src={photo} />
-      <h4>Price: {price}</h4>
+      <p>{title}</p>
+      <img className='' alt='item-image' src={images} />
+      <p>Price: {price} $</p>
       <div className={styles.buttonGrpoup}>
         <button onClick={handleOndInrease} className={styles.addButton}>
           +
