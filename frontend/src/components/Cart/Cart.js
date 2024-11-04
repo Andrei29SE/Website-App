@@ -2,7 +2,6 @@ import Badge from "@mui/material/Badge"
 import { styled } from "@mui/material/styles"
 import IconButton from "@mui/material/IconButton"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
-import styles from "./Header.module.css"
 
 // styling Bage
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -20,7 +19,7 @@ function Cart() {
   return (
     <IconButton aria-label='cart'>
       <StyledBadge badgeContent={1} color='secondary'>
-        <ShoppingCartIcon className={styles.cart} />
+        <ShoppingCartIcon sx={{ color: "white" }} />
       </StyledBadge>
     </IconButton>
   )

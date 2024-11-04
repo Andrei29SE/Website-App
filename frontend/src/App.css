@@ -1,7 +1,10 @@
 .App {
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
   background: var(--background-color);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  align-items: center;
 }
 :root {
   --background-color: radial-gradient(rgb(114, 95, 202), rgb(76, 59, 158));

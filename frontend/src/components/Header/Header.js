@@ -1,4 +1,4 @@
-import Cart from "./Cart"
+import Cart from "../Cart/Cart"
 import styles from "./Header.module.css"
 
 function Header() {
@@ -6,7 +6,7 @@ function Header() {
     <div className={styles.header}>
       <label>Search: </label>
       <input></input>
-      <Cart className={styles.cart} />
+      <Cart />
     </div>
   )
 }

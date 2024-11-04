@@ -10,7 +10,9 @@ function ItemCard(props) {
     return setCount(count + 1)
   }
   const handleOndecDecrease = () => {
-    return setCount(count - 1)
+    if (count === 1) {
+      return setCount(count - 1)
+    }
   }
 
   return (
