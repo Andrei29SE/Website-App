@@ -2,13 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  background: var(--background-color);
+  background: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   align-items: center;
 }
 :root {
-  --background-color: radial-gradient(rgb(114, 95, 202), rgb(76, 59, 158));
-  --green-color: rgb(19, 181, 36);
+  --green-color: rgb(73, 98, 145);
 }
 input {
   margin: 0px 5px 0px 5px;
@@ -16,4 +15,13 @@ input {
   border: 1px solid;
   border-color: black;
   width: 250px;
+}
+p {
+  margin-bottom: 5px;
+}
+.spiner.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

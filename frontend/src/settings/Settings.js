@@ -1,1 +1,1 @@
-export const Fetch_URL = "http://localhost:4001/card"
+export const Fetch_URL = "https://api.escuelajs.co/api/v1/products"
