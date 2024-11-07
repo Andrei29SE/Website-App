@@ -4,6 +4,7 @@ import ItemList from "./components/ItemList/itemList"
 import PagePagination from "./components/Pagination/PagePagination"
 import { useState, useEffect } from "react"
 import { Fetch_URL } from "./settings/Settings.js"
+import { CircularProgress } from "@mui/material"
 
 function App() {
   const [cards, setCards] = useState([])
@@ -37,13 +38,20 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      {loading ? <p>Loading...</p> : <ItemList cards={cards} />}
-
-      <PagePagination
-        count={totalPages}
-        onChange={handleChangePage}
-        page={currentPage}
-      />
+      {loading ? (
+        <div className='spiner centered'>
+          <CircularProgress size={100} sx={{ marginX: "auto", marginY: "auto" }} />
+        </div>
+      ) : (
+        <>
+          <ItemList cards={cards} />
+          <PagePagination
+            count={totalPages}
+            onChange={handleChangePage}
+            page={currentPage}
+          />
+        </>
+      )}
     </div>
   )
 }
