@@ -6,37 +6,43 @@ import { useState, useEffect } from "react"
 import { Fetch_URL } from "./settings/Settings.js"
 
 function App() {
-  const [error, setError] = useState("")
   const [cards, setCards] = useState([])
-  const [offset, setOffset] = useState(0)
-  const limit = 10
-
-  const handleOnPaginationClick = () => {
-    setOffset(offset + limit)
-  }
+  const [currentPage, setCurrentPage] = useState(1)
+  const [loading, setLoading] = useState(false)
+  const itemsPerpage = 8
+  const [totalItems, setTotalItems] = useState(0)
 
   // fetch data from API
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch(Fetch_URL + `?offset=${offset}&limit=${limit}`)
-        const cards = await res.json()
-        console.log(cards)
-        setCards(cards)
-      } catch (error) {
-        setError(error.message)
-      }
+    fetchData(currentPage)
+  }, [currentPage])
+
+  async function fetchData(page) {
+    setLoading(true)
+    const offset = (page - 1) * itemsPerpage
+    try {
+      const res = await fetch(Fetch_URL + `?offset=${offset}&limit=${itemsPerpage}`)
+      const cards = await res.json()
+      setCards(cards)
+      setTotalItems(40)
+    } catch (error) {
+      console.error(error.message)
     }
-    fetchData()
-  }, [offset, limit])
+    setLoading(false)
+  }
+
+  // on  click events
+  const handleChangePage = (e, value) => setCurrentPage(value)
+  const totalPages = Math.ceil(totalItems / itemsPerpage)
   return (
     <div className='App'>
       <Header />
-      <ItemList cards={cards} error={error} />
+      {loading ? <p>Loading...</p> : <ItemList cards={cards} />}
+
       <PagePagination
-        count={limit}
-        page={offset}
-        onChange={handleOnPaginationClick}
+        count={totalPages}
+        onChange={handleChangePage}
+        page={currentPage}
       />
     </div>
   )

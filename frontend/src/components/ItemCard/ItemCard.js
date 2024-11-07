@@ -10,7 +10,7 @@ function ItemCard(props) {
     return setCount(count + 1)
   }
   const handleOndecDecrease = () => {
-    if (!!count) {
+    if (count) {
       return setCount(count - 1)
     }
   }
@@ -18,7 +18,7 @@ function ItemCard(props) {
   return (
     <div className={styles.itemCard}>
       <p>{title}</p>
-      <img className='' alt='item-image' src={images} />
+      <img className='' alt='item-image' src={images[1]} />
       <p>Price: {price} $</p>
       <div className={styles.buttonGrpoup}>
         <button onClick={handleOndInrease} className={styles.addButton}>
