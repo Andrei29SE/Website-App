@@ -1,11 +1,11 @@
 import Cart from "../Cart/Cart"
+import Search from "../Search/Search"
 import styles from "./Header.module.css"
 
 function Header() {
   return (
     <div className={styles.header}>
-      <label>Search: </label>
-      <input></input>
+      <Search />
       <Cart />
     </div>
   )
