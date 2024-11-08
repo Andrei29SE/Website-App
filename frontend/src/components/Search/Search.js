@@ -1,6 +1,6 @@
 import { HiMagnifyingGlass } from "react-icons/hi2"
 import { useContext } from "react"
-import SearchContext from "./SearchContext"
+import SearchContext from "../../context/SearchContext"
 
 function Search() {
   const search = useContext(SearchContext)

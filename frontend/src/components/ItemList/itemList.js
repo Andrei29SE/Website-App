@@ -1,5 +1,5 @@
 import ItemCard from "../ItemCard/ItemCard"
-import SearchContext from "../Search/SearchContext"
+import SearchContext from "../../context/SearchContext"
 import styles from "./ItemList.module.css"
 import { useContext } from "react"
 

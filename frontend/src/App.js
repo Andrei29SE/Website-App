@@ -5,8 +5,7 @@ import PagePagination from "./components/Pagination/PagePagination"
 import { useState, useEffect } from "react"
 import { Fetch_URL } from "./settings/Settings.js"
 import { CircularProgress } from "@mui/material"
-import SearchContext from "./components/Search/SearchContext.js"
-
+import SearchContext from "./context/SearchContext.js"
 function App() {
   //pagination
   const [cards, setCards] = useState([])
@@ -38,30 +37,28 @@ function App() {
   }
 
   // on  click events
-  const handleChangePage = (_, value) => setCurrentPage(value)
+  const handleChangePage = (e, value) => setCurrentPage(value)
   const totalPages = Math.ceil(totalItems / itemsPerpage)
 
   return (
     <div className='App'>
       <SearchContext.Provider value={{ value, setValue }}>
         <Header />
-      </SearchContext.Provider>
-      {loading ? (
-        <div className='spiner centered'>
-          <CircularProgress size={100} sx={{ marginX: "auto", marginY: "auto" }} />
-        </div>
-      ) : (
-        <>
-          <SearchContext.Provider value={{ value }}>
+        {loading ? (
+          <div className='spiner centered'>
+            <CircularProgress size={100} sx={{ marginX: "auto", marginY: "auto" }} />
+          </div>
+        ) : (
+          <>
             <ItemList cards={cards} />
-          </SearchContext.Provider>
-          <PagePagination
-            count={totalPages}
-            onChange={handleChangePage}
-            page={currentPage}
-          />
-        </>
-      )}
+            <PagePagination
+              count={totalPages}
+              onChange={handleChangePage}
+              page={currentPage}
+            />
+          </>
+        )}
+      </SearchContext.Provider>
     </div>
   )
 }
